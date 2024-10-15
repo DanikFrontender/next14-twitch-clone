@@ -1,6 +1,6 @@
 "use client";
 
-import { useUser } from "@clerk/nextjs";
+import { useUser } from "@/lib/auth";
 import { usePathname } from "next/navigation";
 import { 
   Fullscreen,
@@ -13,7 +13,7 @@ import { NavItem, NavItemSkeleton } from "./nav-item";
 
 export const Navigation = () => {
   const pathname = usePathname();
-  const { user } = useUser();
+  const user = useUser();
 
   const routes = [
     {
